@@ -25,15 +25,24 @@ public class DataLoader implements CommandLineRunner {
     }
       @Override
     public void run(String... args) {
-        alunoRepository.save(new Aluno("Junior", 20, "IA"));
-        alunoRepository.save(new Aluno("Bruno", 20, "Cybersecurity"));
+        Professor vitor = professorRepository.save(new Professor("Vitor", "Data Cience", "vitor@gmail.com"));
+        Professor julio = professorRepository.save(new Professor("Julio", "Computer Networks", "julio@gmail.com"));
+        Professor roberto = professorRepository.save(new Professor("Roberto","Ética","roberto@gmai.com"));
 
+        Aluno junior = new Aluno("Junior", 20, "IA");
+        junior.setProfessor(vitor);
+        alunoRepository.save(junior);
+        
+        Aluno bruno = new Aluno("Bruno", 20, "Cybersecurity");
+        bruno.setProfessor(julio);
+        alunoRepository.save(bruno);
+
+        Aluno ana = new Aluno("Ana",22,"ADS");
+        ana.setProfessor(roberto);
+        alunoRepository.save(ana);
+        
         livroRepository.save(new Livro("A Arte da Guerra", "Sun Tzu"));
         livroRepository.save(new Livro("48 Leis do Poder", "Robert Greene"));
         livroRepository.save(new Livro("O Príncipe", "Nicolau Maquiavel"));
-
-        professorRepository.save(new Professor("Vitor", "Data Cience", "vitor@gmail.com"));
-        professorRepository.save(new Professor("Julio", "Computer Networks", "julio@gmail.com"));
-        professorRepository.save(new Professor("Roberto","Ética","roberto@gmai.com"));
     }
 }

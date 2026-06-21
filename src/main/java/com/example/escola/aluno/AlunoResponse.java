@@ -4,11 +4,13 @@ public class AlunoResponse {
     private Long id;
     private String nome;
     private String curso;
+    private String professorNome;
 
-    public AlunoResponse(Long id, String nome, String curso) {
+    public AlunoResponse(Long id, String nome, String curso, String professorNome) {
         this.id = id;
         this.nome = nome;
         this.curso = curso;
+        this.professorNome = professorNome;
     }
 
     public Long getId() {
@@ -21,5 +23,9 @@ public class AlunoResponse {
     
     public String getCurso() {
         return curso;
+    }
+
+    public String getProfessorNome() {
+        return professorNome;
     }
 }

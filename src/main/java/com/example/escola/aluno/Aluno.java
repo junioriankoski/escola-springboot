@@ -1,9 +1,14 @@
 package com.example.escola.aluno;
 
+import com.example.escola.professor.Professor;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;;
+
 
 @Entity
 public class Aluno {
@@ -15,6 +20,10 @@ public class Aluno {
     private String nome;
     private int idade;
     private String curso;
+
+    @ManyToOne
+    @JoinColumn(name = "professor_id")
+    private Professor professor;
 
     public Aluno() {}
 
@@ -40,6 +49,10 @@ public class Aluno {
         return curso;
     }
 
+    public Professor getProfessor() {
+        return professor;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -48,5 +61,9 @@ public class Aluno {
     }
     public void setCurso(String curso) {
         this.curso = curso;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
     }
 }
