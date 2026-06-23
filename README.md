@@ -7,7 +7,7 @@ featuring a layered architecture, DTOs, and centralized error handling.
 - Java 21
 - Spring Boot 3
 - Spring Data JPA
-- H2 Database (in-memory)
+- PostgreSQL
 - Maven
 
 ## Architecture
