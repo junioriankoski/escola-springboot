@@ -16,7 +16,7 @@ public class LivroService {
     }
 
     public List<LivroResponse> listarTodos() {
-        return repository.findAll()
+        return repository.findAllByOrderByIdAsc()
             .stream()
             .map(livro -> new LivroResponse(
                 livro.getId(),
