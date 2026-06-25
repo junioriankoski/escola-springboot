@@ -17,7 +17,7 @@ public class ProfessorService {
     }
 
     public List<ProfessorResponse> listarTodos() {
-        return repository.findAll()
+        return repository.findAllByOrderByIdAsc()
             .stream()
             .map(professor -> new ProfessorResponse(
                 professor.getId(),
