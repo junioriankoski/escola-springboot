@@ -23,7 +23,7 @@ public class AlunoService {
     }
 
     public List<AlunoResponse> listarTodos() {
-        return alunoRepository.findAll()
+        return alunoRepository.findAllByOrderByIdAsc()
             .stream()
             .map(aluno -> new AlunoResponse(
                 aluno.getId(),
