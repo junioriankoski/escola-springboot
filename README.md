@@ -59,12 +59,11 @@ clear error message instead of a generic `500`.
 
 The API will be available at `http://localhost:8080`.
 
-A set of sample students, books, and teachers is automatically loaded 
-on startup via a `DataLoader`.
+## Live Demo
+https://school-springboot.onrender.com
 
 ## Author
 Junior Iankoski — [GitHub](https://github.com/junioriankoski)
 
 ## Status
-🚧 Work in progress — currently learning entity relationships 
-(`@ManyToOne`, `@OneToMany`) and expanding test coverage.
+✅ Deployed — live on Render with PostgreSQL.
